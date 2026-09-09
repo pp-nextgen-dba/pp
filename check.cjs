@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const nodes={};const context=vm.createContext({document:{querySelector:s=>nodes[s]??={innerHTML:'',setAttribute(){},addEventListener(){}},addEventListener(){}},localStorage:{getItem(){return null},setItem(){}}});
+vm.runInContext(fs.readFileSync('procedures.js','utf8')+'\n'+fs.readFileSync('desk.js','utf8'),context);
+const run=s=>vm.runInContext(s,context);
+assert.equal(run('R.filter(r=>matches(r)).length'),21);
+run("engine='Oracle';render()");assert.ok(!nodes['#cards'].innerHTML.includes('Connect locally as postgres'));
+run("reset();query='socket';render()");assert.ok(nodes['#cards'].innerHTML.includes('Connect using the configured socket'));
+run("reset();platform='windows'");assert.equal(run('R.filter(r=>matches(r)).length'),9);
+run('reset();saved.add(key(R[0]));savedOnly=true');assert.equal(run('R.filter(r=>matches(r)).length'),1);
+run("query='nonexistent-query';render()");assert.ok(nodes['#cards'].innerHTML.includes('No matching procedures'));
+run('reset()');assert.equal(run('R.filter(r=>matches(r)).length'),21);
+console.log('PASS: inventory, database/platform filters, search, favourites, empty state, reset');
