@@ -1,16 +1,5 @@
-# Paul’s DBA Handbook — Windows and RHEL edition
+# Paul’s DBA Handbook — Platform Discovery edition
 
-This version organizes procedures by platform. Start with **Windows** for workstation and local-lab tasks, or **RHEL / Linux** for database-host administration.
+The first task is **Discover existing databases**. Select Windows or RHEL, identify services, processes, listeners, configuration files and installed packages, then connect to the intended engine.
 
-## Publish
-
-Extract the ZIP and upload all files to the root of the `pp` GitHub repository. In Settings → Pages, deploy from `main` and `/ (root)`.
-
-## Files
-
-- `index.html`
-- `style.css`
-- `app.js`
-- `README.md`
-
-Replace placeholders before running a command.
+Extract this ZIP and replace the repository-root files in GitHub.
