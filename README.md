@@ -1,18 +1,16 @@
-# Paul’s DBA Handbook
+# Paul’s DBA Handbook — Windows and RHEL edition
 
-Static administration reference for Oracle, PostgreSQL, MySQL, and MongoDB.
+This version organizes procedures by platform. Start with **Windows** for workstation and local-lab tasks, or **RHEL / Linux** for database-host administration.
 
-## Publish with GitHub Pages
+## Publish
 
-1. Extract this ZIP file.
-2. Upload all files into the root of your GitHub repository.
-3. In repository Settings → Pages, select **Deploy from a branch**, then **main** and **/ (root)**.
-4. Save. The site will be available at `https://pp-nextgen-dba.github.io/pp/` after GitHub completes deployment.
+Extract the ZIP and upload all files to the root of the `pp` GitHub repository. In Settings → Pages, deploy from `main` and `/ (root)`.
 
 ## Files
 
-- `index.html` — page structure
-- `style.css` — visual design
-- `app.js` — connection commands, handbook procedures, search and copy interactions
+- `index.html`
+- `style.css`
+- `app.js`
+- `README.md`
 
-The initial screen displays the remote and local connection commands for all four database engines together. Replace placeholders before use. The page does not connect to databases or store credentials.
+Replace placeholders before running a command.
